@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #2563eb;
+  min-height: 100vh;
+}
+
+.container-fluid {
+  padding: 10px 50px;
+
+}
+
+.NavlogoSection {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.NavLogo {
+  width: 40px;
+  height: 40px;
+  background: #3b82f6;
+  border-radius: 100px;
+
+}
+
+.NavBrandName {
+  font-size: 26px;
+  color: #000;
+  font-weight: 650;
+
+}
+
+.navbar-nav {
+  gap: 20px;
+
+}
+
+.nav-link {
+  font-weight: 600;
+  color: #64748b;
+
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #3b82f6 !important;
+}
+
+.loginNav {
+  background: #3b82f6;
+  color: #fff;
+  padding: 5px 20px !important;
+  border-radius: 20px;
+  text-decoration: underline;
+}
+
+.loginNav:hover {
+  background: #2563eb;
+}
+
+.hero {
+  padding: 140px 50px 80px;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 22px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.apmt_card {
+  background: white;
+  border-radius: 32px;
+  padding: 50px;
+  box-shadow: 0 30px 90px rgba(59, 130, 246, 0.3);
+}
+
+.card_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #e0f2fe;
+
+}
+
+.card_header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.new_btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.new_btn:hover {
+  background: #2563eb;
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+}
+
+.appointments_container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.apmt_item {
+  display: flex;
+  align-items: center;
+  padding: 28px;
+  background: #fafbff;
+  border-radius: 20px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s;
+}
+
+.apmt_item:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+}
+
+.apmt_date,
+.apmt_doctor,
+.apmt_status,
+.apmt_actions {
+  flex: 1;
+  min-width: 150px;
+}
+
+.apmt_date strong {
+  font-size: 18px;
+}
+
+.apmt_date small {
+  color: #64748b;
+}
+
+.apmt_doctor strong {
+  font-size: 18px;
+}
+
+.apmt_doctor span {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+footer {
+  background: #3B82F6;
+  color: white;
+  padding: 40px 20px 20px;
+}
+
+.footer_wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.col {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #a5d8ff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.col p, .col a {
+  font-size: 14px;
+  color: #e3f2fd;
+  text-decoration: none;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.col a:hover {
+  color: #a5d8ff;
+}
+
+.col h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: white;
+  border-bottom: 3px solid #a5d8ff;
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.contact_item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.newsletter {
+  display: flex;
+  margin-top: 15px;
+}
+
+.newsletter input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  font-size: 14px;
+}
+
+.newsletter button {
+  background: #a5d8ff;
+  color: #a3b2c0;
+  border: none;
+  padding: 0 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.newsletter button:hover {
+  background: white;
+}
+
+.social {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.social a {
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 16px;
+}
+
+.social a:hover {
+  background: #a5d8ff;
+  color: #003366;
+}
+
+.bottom {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  font-size: 13px;
+  color: #bbd7ff;
+}
+
+@media (max-width: 768px) {
+  .apmt_item {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  
+  }
+
+  .apmt_date,
+  .apmt_doctor,
+  .apmt_status,
+  .apmt_actions {
+    width: 100%;
+    margin-bottom: 16px;
+  
+  }
+
+  .apmt_actions {
+    margin-top: 10px;
+  
+  }
+
+  .action_btn {
+    width: 100%;
+    margin: 8px 0;
+  
+  }
+
+  .main {
+    padding: 0 20px;
+  
+  }
+
+  .apmt_card {
+    padding: 30px;
+  
+  }
+
+}

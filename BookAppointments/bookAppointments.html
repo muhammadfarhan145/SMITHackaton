@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | PureHeal</title>
+    <link rel="icon" href="../Assets/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./bookAppointments.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <div class="container NavlogoSection">
+                    <div class="NavLogo"></div>
+                    <p class="NavBrandName">PureHeal</p>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about/about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact/contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Appointments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../MyAppointments/MyAppointments.html">MyAPMT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link loginNav" href="../Auth/Login/login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="heroBanner">
+        <img src="../Assets/herobannerimg3.jpg" class="heroBannerImg">
+        <div class="heroBannerContent">
+            <h1 class="heroBannerH1">Your time is valuable.</h1>
+            <p class="heroBannerP">Schedule a convenient time to meet.</p>
+        </div>
+    </section>
+    <section class="AppointmentSec">
+        <div class="AppointmentFormDiv">
+            <form method="post" id="AppointmentForm">
+                <div class="Name_ageDiv">
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="patientName" placeholder="Your Name"/>
+                        <label for="patientName">Your Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="patientAge" placeholder="Age"/>
+                        <label for="patientAge">Age</label>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="patientEmail" placeholder="Your Email"/>
+                    <label for="patientEmail">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="tel" class="form-control" id="patientPhone" placeholder="Phone Number"/>
+                    <label for="patientPhone">Phone Number</label>
+                </div>
+                <input type="date"class="form-select form-select-lg mb-3" id="appointmentDate" required />
+                <select class="form-select form-select-lg mb-3" id="doctorSelect">
+                    <option selected>Select Doctor</option> 
+                </select>
+                <select class="form-select form-select-lg mb-3" id="slotSelect">
+                    <option selected>Choose Slots</option>
+                </select>
+                <textarea id="reason" class="form-control mb-3" rows="4" placeholder="Reason for visit"></textarea>
+                <button type="submit" class="btn btn-primary w-100" id="bookAppointmentBtn">
+                    Book Appointment
+                </button>
+            </form>
+        </div>
+        
+    </section>
+    <footer>
+    <div class="footer_wrap">
+      <div class="col">
+        <a href="#" class="logo">
+          <i class="fas fa-heartbeat"></i> PureHeal
+        </a>
+        <p>
+            PureHeal Hospital is a state-of-the-art medical facility committed to delivering 
+            world-class healthcare with compassion, integrity, and excellence. Since our 
+            establishment in 1995, we have been at the forefront of medical innovation, offering 
+            advanced diagnostics, specialized treatments, and personalized care across more than 
+            25 medical departments.
+        </p>
+      </div>
+      <div class="col">
+        <h4>Quick Links</h4>
+        <a href="../about/about.html">About Us</a>
+        <a href="#">Services</a>
+        <a href="../doctors/doctors.html">Find Doctor</a>
+        <a href="#">Book Appointment</a>
+      </div>
+      <div class="col">
+        <h4>Departments</h4>
+        <a href="#">Cardiology</a>
+        <a href="#">Neurology</a>
+        <a href="#">Pediatrics</a>
+        <a href="#">Orthopedics</a>
+      </div>
+
+      <div class="col">
+        <h4>Contact</h4>
+        <div class="contact_item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>123 Health St, HealCity</div>
+        </div>
+        <div class="contact_item">
+          <i class="fas fa-phone"></i>
+          <div>+91 98765 43210</div>
+        </div>
+        <div class="contact_item">
+          <i class="fas fa-envelope"></i>
+          <div>info@pureheal.com</div>
+        </div>
+
+        <form class="newsletter">
+          <input type="email" placeholder="Your email" required />
+          <button><i class="fas fa-paper-plane"></i></button>
+        </form>
+
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="bottom">
+      © 2025 PureHeal Hospital. All rights reserved.
+    </div>
+  </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js" integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="./bookAppointments.js"></script>
+</html>
