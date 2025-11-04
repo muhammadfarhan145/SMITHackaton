@@ -60,7 +60,7 @@ async function loadMyAppointments() {
           <span>Patient: ${a.patient_name}</span>
         </div>
         <div class="apmt_status">
-          <span class="status ${a.status.toLowerCase()}">${a.status}</span>
+          <span class="status">${a.status}</span>
         </div>
         <button type="button" 
                 class="action_btn view_btn" 
