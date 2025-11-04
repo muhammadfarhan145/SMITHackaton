@@ -3,14 +3,25 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
-  padding-top: 10px;
-  font-family: 'Poppins', sans-serif;
+html {
   scroll-behavior: smooth;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 80px;
+}
+
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .container-fluid {
@@ -20,236 +31,277 @@ body {
 .NavlogoSection {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-.NavLogo {
-  width: 40px;
-  height: 40px;
-  background-color: #3B82F6;
-  border-radius: 100px;
-}
-
-.NavBrandName {
-  font-size: 26px;
-  color: #000;
-  font-weight: 650;
+  gap: 12px;
   margin: 0;
+  padding: 0;
 }
-
+.NavLogo {
+  width: 44px;
+  height: 44px;
+  background: #3b82f6;
+  border-radius: 50px;
+}
+.NavBrandName {
+  font-weight: 700;
+  font-size: 25px;
+  color: #000;
+}
 .navbar-nav {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   align-items: center;
+  list-style: none;
 }
-
-.navbar-nav .active {
-  color: #3B82F6 !important;
-}
-
-.nav-item .nav-link {
+.nav-link {
   font-weight: 600;
   color: #64748b;
+  text-decoration: none;
 }
-
-.nav-item .nav-link:hover {
-  color: #3B82F6;
+.nav-link:hover,
+.nav-link.active {
+  color: #3b82f6;
 }
-
-.nav-item .loginNav {
-  background-color: #3B82F6;
-  padding: 5px 20px !important;
-  text-decoration: underline;
+.loginNav {
+  background: #3b82f6;
   color: #fff;
-  width: fit-content;
+  padding: 8px 24px;
   border-radius: 20px;
+  text-decoration: none;
+}
+.loginNav:hover {
+  background: #2563eb;
 }
 
-.nav-item .loginNav:hover {
-  background-color: #2563EB;
-  color: #fff;
+@media (max-width: 480px) {
+  .NavlogoSection {
+    width: fit-content;
+  }
+
+  .NavBrandName {
+    font-size: 16px;
+  }
 }
 
-.heroBanner  {
-position: relative;
-overflow: hidden;
-width: 100%;
-height: 620px;
+@media (max-width: 992px) {
+  .navbar-nav {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+  }
+  .container-fluid {
+    padding: 10px 20px;
+  }
 }
 
+.heroBanner {
+  position: relative;
+  width: 100%;
+  height: 620px;
+  overflow: hidden;
+}
 .heroBannerImg {
-width: 100%;
-object-fit: cover;
-opacity: 0.7;
-filter: blur(5px);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  filter: blur(5px);
 }
-
 .heroBannerContent {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-text-align: center;
-max-width: 800px;
-width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -450px;
+  margin-top: -140px;
+  width: 900px;
+  max-width: 90%;
+  text-align: center;
 }
-
 .heroBannerH1 {
-font-size: 72px;
-font-weight: 700;
-color: #2563EB;
+  font-size: 72px;
+  font-weight: 700;
+  color: #2563eb;
 }
-
 .heroBannerP {
-font-size: 20px;
-color: #fff;
-font-weight: 600;
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+  margin: 20px 0;
 }
-
-.heroBanner_a {
-text-decoration: none;
-color: #3B82F6;
-}
-
 .heroBannerButton {
   border: none;
+  background: #fff;
+  color: #3b82f6;
+  padding: 12px 30px;
   border-radius: 10px;
-  background-color: #fff;
-  color: #3B82F6;
-  padding: 10px 25px;  
+  font-weight: 600;
+  cursor: pointer;
+}
+.heroBannerButton:hover {
+  background: #2563eb;
+  color: #fff;
 }
 
-.heroBannerButton:hover {
-  background-color: #2563EB;
-  color: #fff;
+@media (max-width: 768px) {
+  .heroBanner {
+    height: 500px;
+  }
+  .heroBannerH1 {
+    font-size: 48px;
+  }
+  .heroBannerContent {
+    margin-left: -360px;
+    margin-top: -120px;
+  }
+}
+@media (max-width: 480px) {
+  .heroBannerH1 {
+    font-size: 36px;
+  }
+  .heroBannerP {
+    font-size: 16px;
+  }
+  .heroBannerContent {
+    margin-left: -45%;
+    margin-top: -100px;
+  }
 }
 
 .homeLinkCards {
-  margin: 60px auto;
-  width: fit-content;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
+  justify-content: center;
+  padding: 60px 20px;
 }
-
 .homeLinkCard_a {
   text-decoration: none;
 }
-
-.homeLinkCards .homeLinkCard {
-  width: 400px;
+.homeLinkCard {
+  width: 380px;
+  background: #fff;
   border-radius: 8px;
-  height: fit-content;
+  overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
-
-.homeLinkCards .homeLinkCard:hover {
+.homeLinkCard:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
-
 .homeLinkCardImg {
   width: 100%;
-  height: 50%;
+  height: 200px;
+  object-fit: cover;
 }
-
 .homeLinkCardImg:hover {
-  opacity: 0.5;
+  opacity: 0.7;
 }
-
 .homeLinkCardContent {
   padding: 30px 20px;
+  text-align: center;
 }
-
-.homeLinkCarH5 {
-  margin-top: 30px;
-  color: #3B82F6;
+.homeLinkCardH5 {
+  font-size: 22px;
+  color: #3b82f6;
+  margin-bottom: 10px;
 }
-
-.homeLinkCarH5:hover {
-  color: #2563EB;
+.homeLinkCardP {
+  color: #555;
+  margin-bottom: 20px;
 }
-
 .homeLinkCardButton {
   border: none;
-  padding: 5px 20px;
-  border-radius: 8px;
-  background-color: #3B82F6;
+  background: #3b82f6;
   color: #fff;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.homeLinkCardButton:hover {
+  background: #2563eb;
 }
 
-.homeLinkCardButton:hover {
-  background-color: #2563EB;
+@media (max-width: 992px) {
+  .homeLinkCard {
+    width: 45%;
+  }
+}
+@media (max-width: 600px) {
+  .homeLinkCard {
+    width: 90%;
+    max-width: 380px;
+  }
 }
 
 .healthLibrary {
   display: flex;
-  width: fit-content;
-  margin: 20px auto 20px;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  padding: 40px 20px;
 }
-
 .healthLibraryBanner {
-  background-color: #3B82F6;
+  background: #3b82f6;
   width: 350px;
   height: 350px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
-
 .healthLibraryBannerContent {
   display: flex;
-  width: fit-content;
-  margin: 0 auto;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  color: #fff;
 }
-
-.healthLibraryBannerContent .healthLibraryBanner_P {
-  font-weight: 700;
+.healthLibraryBanner_P {
   font-size: 28px;
-  margin: 0;
+  font-weight: 700;
 }
-
 .healthLibraryList {
-  background-color: #b7cae7;
+  background: #b7cae7;
   width: 350px;
   height: 350px;
-  align-items: center;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
 }
-
-.healthLibraryListContent {
-  padding: 30px 20px;
-}
-
 .healthLibraryListContent p {
-  color: #3B82F6;
+  color: #3b82f6;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 5px;
 }
-
 .healthLibraryListContent p:hover {
-  color: #3B82F6;
   text-decoration: underline;
 }
 
+@media (max-width: 768px) {
+  .healthLibraryBanner,
+  .healthLibraryList {
+    width: 90%;
+    height: 250px;
+  }
+}
+
 .PatientStories {
-  margin: 40px auto;
-  width: fit-content;
-}
-
-.PatientStories h1 {
+  padding: 60px 20px;
   text-align: center;
-  margin-bottom: 15px;
 }
-
+.PatientStories h1 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #2563eb;
+}
 .PatientStoriesDiv {
-  width: fit-content;
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 30px;
   justify-content: center;
 }
-
 .PatientStory {
-  width: 40%;
-  background-color: #F9FAFB;
+  width: 500px;
+  background: #f9fafb;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -257,227 +309,189 @@ color: #3B82F6;
 .PatientStory:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
-
-.PatientStoryContent {
-  display: flex;
-  flex-direction: column;
+.PatientStoryContent p {
+  font-style: italic;
+  margin-bottom: 20px;
+  color: #444;
 }
-
 .PatientStory_Img_Name {
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 15px;
 }
-
 .PatientStoryImg {
-  width: 50px;
-  height: 50px;
-  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+  object-fit: cover;
 }
-
-.PatientStoryName_Disease {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
+.PatientStoryName {
+  font-weight: 600;
 }
-
-.PatientStoryName_Disease h5 {
-  margin: 0;
-  font-size: 16px;
-}
-
-.PatientStoryName_Disease p {
-  color: #6B7280;
+.PatientStoryDisease {
+  color: #6b7280;
   font-size: 14px;
-  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .PatientStory {
+    width: 90%;
+  }
 }
 
 .statsSection {
-  padding: 60px;
-  background-color: #b7cae7;
+  background: #b7cae7;
+  padding: 60px 20px;
 }
-
-.statsSection:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
 .Stats {
   display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
   justify-content: center;
-}
-
-.Stats div {
-  width: 25%;
   text-align: center;
 }
-
-.Stats .statsNumber {
-  margin: 0;
-  font-size: 36px;
+.Stats > div {
+  width: 200px;
+}
+.statsNumber {
+  font-size: 42px;
   font-weight: 700;
+  margin-bottom: 8px;
 }
-
-.Stats .stats_in {
-  color: #4B5563;
+.stats_in {
   font-size: 18px;
-  margin: 0;
+  color: #4b5563;
 }
-
 .DoctorStats .statsNumber {
-  color: #2563EB;
+  color: #2563eb;
 }
-
 .SpecialtiesStats .statsNumber {
-  color: #9333EA;
+  color: #9333ea;
 }
-
 .HappyPatientStats .statsNumber {
-  color: #16A34A;
+  color: #16a34a;
 }
 .E_ServicesStats .statsNumber {
-  color: #60A5FA;
+  color: #60a5fa;
+}
+
+@media (max-width: 600px) {
+  .Stats {
+    gap: 30px;
+  }
+  .Stats > div {
+    width: 45%;
+  }
 }
 
 footer {
-  background: #3B82F6;
-  color: white;
-  padding: 40px 20px 20px;
+  background: #3b82f6;
+  color: #fff;
+  padding: 50px 20px 20px;
 }
-
 .footer_wrap {
-  max-width: 1200px;
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
   justify-content: space-between;
-  gap: 30px;
 }
-
 .col {
   flex: 1;
-  min-width: 200px;
-  display: flex;
-  flex-direction: column;
+  min-width: 250px;
 }
-
 .logo {
-  font-size: 28px;
-  font-weight: bold;
-  color: #a5d8ff;
-  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 15px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #a5d8ff;
+  text-decoration: none;
+  margin-bottom: 20px;
 }
-
-.col p, .col a {
+.col p {
+  color: #e3f2fd;
+  margin-bottom: 12px;
   font-size: 14px;
+}
+.col a {
   color: #e3f2fd;
   text-decoration: none;
+  display: block;
   margin-bottom: 8px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  font-size: 14px;
 }
-
 .col a:hover {
-  color: #a5d8ff;
+  color: #fff;
 }
-
 .col h4 {
   font-size: 18px;
-  margin-bottom: 15px;
-  color: white;
+  color: #fff;
   border-bottom: 3px solid #a5d8ff;
   padding-bottom: 8px;
   display: inline-block;
+  margin-bottom: 20px;
 }
-
 .contact_item {
   display: flex;
   gap: 10px;
   margin-bottom: 12px;
-  font-size: 14px;
+  align-items: flex-start;
 }
-
 .newsletter {
   display: flex;
-  margin-top: 15px;
+  margin-top: 20px;
 }
-
 .newsletter input {
   flex: 1;
   padding: 12px;
   border: none;
   font-size: 14px;
 }
-
 .newsletter button {
   background: #a5d8ff;
   color: #003366;
   border: none;
-  padding: 0 16px;
-  font-weight: bold;
+  padding: 0 18px;
   cursor: pointer;
 }
-
 .newsletter button:hover {
-  background: white;
+  background: #fff;
 }
-
 .social {
   display: flex;
   gap: 12px;
-  margin-top: 15px;
+  margin-top: 20px;
 }
-
 .social a {
-  width: 36px;
-  height: 36px;
-  background: rgba(255,255,255,0.1);
-  color: white;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  font-size: 16px;
+  font-size: 18px;
 }
-
 .social a:hover {
   background: #a5d8ff;
   color: #003366;
 }
-
 .bottom {
   text-align: center;
-  padding-top: 20px;
-  margin-top: 30px;
-  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 30px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 13px;
   color: #bbd7ff;
 }
 
 @media (max-width: 768px) {
-
-  .heroBannerImg {
-    height: 100%;
-  }
-
-  .homeLinkCards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .homeLinkCard {
-    width: 90%;
-    max-width: 350px;
-  }
-
-  .footer-wrap {
-    flex-direction: column;
+  .footer_wrap {
+    justify-content: center;
     text-align: center;
   }
   .col h4 {
@@ -489,64 +503,5 @@ footer {
   }
   .social {
     justify-content: center;
-  }
-}
-
-@media (max-width: 576px) {
-  .heroBannerImg{
-    height: 100%;
-  }
-  .heroBannerH1 {
-    font-size: 36px;
-  }
-  .heroBannerP {
-    font-size: 16px;
-  }
-
-  .homeLinkCards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .homeLinkCard {
-    width: 90%;
-    max-width: 200px;
-  }
-
-  .healthLibrary {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .healthLibraryBanner {
-    width: 200px;
-    text-align: center;
-  }
-
-  .healthLibraryList {
-    width: 200px;
-  }
-
-  .PatientStoriesDiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .PatientStory {
-    width: 90%;
-    max-width: 350px;
-  }
-
-  .Stats {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .Stats div {
-    width: 100%;
   }
 }

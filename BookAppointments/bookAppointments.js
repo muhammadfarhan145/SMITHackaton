@@ -2,9 +2,48 @@ const supabaseClient = supabase.createClient("https://queftwxqyuinynpsixqa.supab
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF1ZWZ0d3hxeXVpbnlucHNpeHFhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk5MTQ5NDEsImV4cCI6MjA3NTQ5MDk0MX0.TWex1aIXHoopzD9q1LR2hOt6hsBY6JN3aAtaXpvM5hc"
 );
 
+// modal & toasts
+
+const signInFirstModal = () => {
+  const signInFirstModal = new bootstrap.Modal(
+    document.getElementById("signInFirstModal")
+  );
+  signInFirstModal.show();
+};
+
+const fillFieldsModal = () => {
+  const fillFieldsModal = new bootstrap.Modal(
+    document.getElementById("fillFieldsModal")
+  );
+  fillFieldsModal.show();
+};
+
+const appointmentBookedToast = () => {
+  const appointmentBookedToast = document.getElementById("appointmentBookedToast");
+  const toastBootstrap = bootstrap.Toast.getOrCreateInstance(appointmentBookedToast);
+  toastBootstrap.show();
+};
+
 const docSelect = document.getElementById("doctorSelect");
 const slotSelect = document.getElementById("slotSelect");
 const bookAppointmentBtn = document.getElementById("bookAppointmentBtn");
+
+  async function navbarSignOut() {
+    const { data: { user } } = await supabaseClient.auth.getUser();
+
+    if (user) {
+      document.querySelector(".loginNav").textContent = "SignOut";
+      document.querySelector(".loginNav").onclick = async () => {
+        await supabaseClient.auth.signOut();
+        alert("Sign Out Successfully!");
+        setTimeout(() => {
+          location.reload();
+        }, 800)
+      };
+    }
+  }
+  navbarSignOut();
+
 
 document.querySelector('input[type="date"]').min = new Date().toISOString().split("T")[0];
 
@@ -51,7 +90,7 @@ bookAppointmentBtn.onclick = async (event) => {
     
     const { data: { user } } = await supabaseClient.auth.getUser();
     if(!user) {
-        alert("Signin First");
+        signInFirstModal();
         setTimeout(() => {
             window.location.href = "../Auth/Login/login.html";
         }, 300);
@@ -67,7 +106,7 @@ bookAppointmentBtn.onclick = async (event) => {
     const doctorName = docSelect.selectedOptions[0].dataset.doctorName;
 
     if(!appointmentDate || !patientName || !patientAge || !patientEmail || !patientPhone || !reason || !timeSlot || !doctorName) {
-        alert("Fill all Fields");
+        fillFieldsModal();
         return;
     }
 
@@ -86,12 +125,11 @@ bookAppointmentBtn.onclick = async (event) => {
     });
 
     if( error ) {
-        alert("error")
         console.error(error.message);
         return;
     }
 
-    alert("Appointment Booked!");
+    appointmentBookedToast();
     setTimeout(() => {
        window.location.href = "../MyAppointments/MyAppointments.html";
     }, 800);
