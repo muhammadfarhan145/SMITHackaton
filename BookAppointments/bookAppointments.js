@@ -36,10 +36,7 @@ const bookAppointmentBtn = document.getElementById("bookAppointmentBtn");
       document.querySelector(".loginNav").onclick = async () => {
         await supabaseClient.auth.signOut();
         alert("Sign Out Successfully!");
-        setTimeout(() => {
-          location.reload();
-        }, 800)
-      };
+        location.reload();
     }
   }
   navbarSignOut();
